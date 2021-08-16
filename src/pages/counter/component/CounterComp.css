@@ -1,0 +1,13 @@
+.container-counter {
+   display: flex;
+   align-items: center;
+   font-size: 25px;
+}
+
+.negative-count {
+   color: red;
+}
+
+.positive-count {
+   color: green;
+}

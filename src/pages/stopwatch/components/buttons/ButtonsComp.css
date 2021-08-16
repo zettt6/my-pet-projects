@@ -1,0 +1,16 @@
+.btn-container button {
+   height: 70px;
+   width: 70px;
+   border-radius: 50%;
+   background-color: black;
+   font-size: 15px;
+   color: white;
+   border: 2px solid white;
+   margin: 20px;
+}
+
+.btn-container button:hover {
+   background-color: white;
+   color: black;
+   cursor: pointer;
+}
