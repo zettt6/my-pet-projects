@@ -6,6 +6,13 @@
    background-color: #fbfbfb;
 }
 
+.cards-wrapper {
+   width: 70%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
 .cards:hover {
    cursor: pointer;
    background-color: rgb(209, 252, 230);
@@ -14,13 +21,17 @@
 .cards {
    height: 200px;
    width: 200px;
+   box-sizing: border-box;
+   padding: 10px;
+   margin: 10px;
+
    display: flex;
    align-items: center;
    justify-content: center;
    flex-direction: column;
+
    background-color: rgb(255, 255, 255);
    box-shadow: 1px -1px 14px 0px #d2d2d2;
-   margin: 10px;
    border-radius: 3px;
 }
 
