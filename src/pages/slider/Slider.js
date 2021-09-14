@@ -45,7 +45,7 @@ function Slider() {
    return (
       <div className="Slider">
          <img
-            className="arrow-left"
+            className="arrow arrow-left"
             src={arrowLeft}
             alt="arrowLeft"
             onClick={prevSlide}
@@ -68,9 +68,27 @@ function Slider() {
                   )
                })}
             </div>
+            <div className="dots-wrapper">
+               {sliderData.map((slide, index) => {
+                  return (
+                     <div key={index.toString()}>
+                        {index !== currentSlide ? (
+                           <div
+                              className="dot"
+                              onClick={() => {
+                                 setCurrentSlide(index)
+                              }}
+                           ></div>
+                        ) : (
+                           <div className="dot active-dot"></div>
+                        )}
+                     </div>
+                  )
+               })}
+            </div>
          </div>
          <img
-            className="arrow-right"
+            className="arrow arrow-right"
             src={arrowRight}
             alt="arrowRight"
             onClick={nextSlide}
