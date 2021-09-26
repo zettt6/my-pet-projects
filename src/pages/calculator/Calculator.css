@@ -40,8 +40,6 @@
    font-size: 20px;
    color: #efefef;
    background-color: #333333;
-   /* display: flex;
-   align-items: center; */
    border: none;
    border-radius: 50%;
    cursor: pointer;
@@ -63,9 +61,6 @@
    color: #262626;
 }
 
-.grey-highligh:hover {
-}
-
 .orange-highligh {
    background-color: #fe9f16;
    color: #fffaf4;
@@ -74,6 +69,10 @@
 .orange-highligh:hover {
    background-color: #fff;
    color: #fe9f16;
+}
+
+.noactive {
+   background-color: brown;
 }
 
 .zero {
