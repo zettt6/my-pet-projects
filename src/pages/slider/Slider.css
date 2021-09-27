@@ -4,7 +4,9 @@ body {
 
 .Slider {
    display: flex;
+   margin: 0 auto;
    height: 100vh;
+   width: 800px;
    align-items: center;
    justify-content: center;
    position: relative;
@@ -33,17 +35,17 @@ body {
 
 .arrow {
    height: 40px;
-   z-index: 2;
    position: absolute;
+   z-index: 2;
    top: 50%;
 }
 
 .arrow-right {
-   right: 25%;
+   right: 5%;
 }
 
 .arrow-left {
-   left: 25%;
+   left: 5%;
 }
 
 .arrow:hover {
