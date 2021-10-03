@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom'
-import './Projects.css'
+import './MainPage.css'
 
 import clock from './svg/clock.svg'
 import colorFlipper from './svg/colorFlipper.svg'
@@ -9,11 +9,11 @@ import todo from './svg/todo.svg'
 import slider from './svg/slider.svg'
 import calc from './svg/calculator.svg'
 
-function Projects() {
+function MainPage() {
    let history = useHistory()
 
    return (
-      <div className="Projects">
+      <div className="MainPage">
          <div className="cards-wrapper">
             <div
                className="cards projects-clock"
@@ -75,4 +75,4 @@ function Projects() {
    )
 }
 
-export default Projects
+export default MainPage

@@ -3,7 +3,7 @@ import './Calculator.css'
 
 function Calculator() {
    const [operator, setOperator] = useState('')
-   const [inputText, setInputText] = useState(0)
+   const [currentOutput, setCurrentOutput] = useState(0)
 
    const [result, setResult] = useState(0)
 
@@ -14,7 +14,7 @@ function Calculator() {
          type: 'posOrNeg',
          className: 'btn grey-highligh ',
       },
-      { value: '%', type: 'procent', className: 'btn grey-highligh noactive' },
+      { value: '%', type: 'procent', className: 'btn grey-highligh ' },
       { value: '÷', type: 'divide', className: 'btn orange-highligh' },
 
       { value: 7, type: 'num', className: 'btn' },
@@ -37,7 +37,7 @@ function Calculator() {
 
       { value: 0, type: 'num', className: 'btn zero' },
 
-      { value: ',', type: 'decimal', className: 'btn noactive' },
+      { value: ',', type: 'decimal', className: 'btn ' },
       { value: '=', type: 'equel', className: 'btn orange-highligh' },
    ]
 
@@ -45,61 +45,67 @@ function Calculator() {
    // оператор %
    // десятичная дробь
 
-   console.log(operator)
-   console.log('result = ' + result)
-   console.log('inputText = ' + inputText)
+   console.log('result: ' + result)
+   console.log('operator: ' + operator)
+   console.log('currentOutput: ' + currentOutput)
 
-   function buttonHandler(btn) {
+   function clickHandler(btn) {
       let tempVar = ''
       switch (btn.type) {
          case 'num':
-            tempVar = inputText.toString() + btn.value
-            setInputText(+tempVar)
+            // !!!
+
+            tempVar += currentOutput.toString() + btn.value
+            setCurrentOutput(+tempVar)
+
             break
          case 'equel':
             calculate()
+            setOperator('')
             break
          case 'clean':
             setResult(0)
-            setInputText(0)
+            setCurrentOutput(0)
             setOperator('')
             break
          case 'procent':
-            tempVar = inputText / 100
-            setInputText(tempVar)
-            setResult(tempVar)
+            tempVar = currentOutput / 100
+            setCurrentOutput(tempVar)
+            setOperator(btn.value)
             break
          case 'decimal':
-            tempVar = inputText.toString() + '.'
-            setInputText(tempVar)
-            setResult(tempVar)
+            tempVar = currentOutput.toString() + '.'
+            setCurrentOutput(tempVar)
             break
          case 'posOrNeg':
-            tempVar = inputText * -1
-            setInputText(tempVar)
+            tempVar = currentOutput * -1
+            setCurrentOutput(tempVar)
             break
          default:
-            setResult(inputText)
-            setInputText('')
-            setOperator(btn.value)
+            // setResult(currentOutput)
+            // // в инпуте должно отоборажаться последнее введеное число
+            // setCurrentOutput('')
             calculate()
+            setOperator(btn.value)
       }
    }
 
    function calculate() {
-      let tempVar = result
+      let tempRes = result
 
-      if (operator === '+') {
-         tempVar = tempVar + inputText
+      if (operator === '') {
+         setResult(currentOutput)
+      } else if (operator === '+') {
+         tempRes = tempRes + currentOutput
       } else if (operator === '-') {
-         tempVar = tempVar - inputText
+         tempRes = tempRes - currentOutput
       } else if (operator === '×') {
-         tempVar = tempVar * inputText
+         tempRes = tempRes * currentOutput
       } else if (operator === '÷') {
-         tempVar = tempVar / inputText
-      } else setInputText(tempVar)
+         tempRes = tempRes / currentOutput
+      }
 
-      setInputText(tempVar)
+      setCurrentOutput(tempRes)
    }
 
    return (
@@ -107,20 +113,24 @@ function Calculator() {
          <div className="calc-wrapper">
             <div>
                <input
+                  readOnly
                   className="input"
                   type="text"
-                  value={inputText}
+                  value={currentOutput}
                   onChange={() => {}}
                />
             </div>
-
             <div className="btns-container">
                {btnData.map((btn, index) => {
                   return (
                      <button
                         key={index.toString()}
-                        className={btn.className}
-                        onClick={() => buttonHandler(btn)}
+                        className={
+                           operator === btn.value
+                              ? btn.className + ' active-operator'
+                              : btn.className
+                        }
+                        onClick={() => clickHandler(btn)}
                      >
                         {btn.value}
                      </button>
