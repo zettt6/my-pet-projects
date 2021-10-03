@@ -1,29 +1,8 @@
-import {
-   BrowserRouter as Router,
-   Switch,
-   Route,
-   Redirect,
-} from 'react-router-dom'
-
 import './App.css'
-
-import { routes } from './router/routes'
+import AppRouter from './router/AppRouter'
 
 function App() {
-   return (
-      <Router>
-         <Switch>
-            {routes.map((route) => (
-               <Route
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}
-               />
-            ))}
-            <Redirect to="/error" />
-         </Switch>
-      </Router>
-   )
+   return <AppRouter />
 }
 
 export default App
