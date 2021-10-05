@@ -49,14 +49,6 @@ function MainPage() {
 
             <div
                className="cards projects-todolist"
-               onClick={() => history.push('/todolist')}
-            >
-               <img src={todo} alt="todolist" />
-               <div className="cards-title">To Do List</div>
-            </div>
-
-            <div
-               className="cards projects-todolist"
                onClick={() => history.push('/slider')}
             >
                <img src={slider} alt="slider" />

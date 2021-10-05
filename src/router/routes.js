@@ -6,7 +6,7 @@ import ToDoList from '../pages/toDoList/ToDoList'
 import Calculator from '../pages/calculator/Calculator'
 import Slider from '../pages/slider/Slider'
 import PageNotFound from '../pages/pageNotFound/PageNotFound'
-import MainPage from '../pages/mainPage/MainPage'
+import MainPage from '../pages/projects/MainPage'
 
 export const routes = [
    { path: '/', exact: true, component: MainPage },
