@@ -11,8 +11,9 @@ function AppRouter() {
    return (
       <Router>
          <Switch>
-            {routes.map((route) => (
+            {routes.map((route, index) => (
                <Route
+                  key={index.toString()}
                   path={route.path}
                   exact={route.exact}
                   component={route.component}

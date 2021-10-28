@@ -15,11 +15,12 @@
 }
 
 .input {
-   width: 230px;
+   width: 235px;
    height: 90px;
    font-size: 40px;
    letter-spacing: 3px;
    outline: none;
+   border: none;
    background-color: black;
    color: rgb(207, 207, 207);
    text-align: end;

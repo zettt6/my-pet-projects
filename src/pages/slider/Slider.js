@@ -72,7 +72,7 @@ function Slider() {
                {sliderData.map((slide, index) => {
                   return (
                      <div key={index.toString()}>
-                        {index == currentSlide ? (
+                        {index === currentSlide ? (
                            <div
                               className="dot"
                               onClick={() => {

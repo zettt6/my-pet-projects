@@ -5,7 +5,6 @@ import clock from './svg/clock.svg'
 import colorFlipper from './svg/colorFlipper.svg'
 import counter from './svg/counter.svg'
 import stopwatch from './svg/stopwatch.svg'
-import todo from './svg/todo.svg'
 import slider from './svg/slider.svg'
 import calc from './svg/calculator.svg'
 
